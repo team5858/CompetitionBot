@@ -35,7 +35,7 @@ public class Drivetrain extends Subsystem {
 
 	public final TalonSRX left_Speed_Controller = RobotMap.drivetrainLeft_Speed_Controller;
     private final SpeedController right_Speed_Controller = RobotMap.drivetrainRight_Speed_Controller;
-    private final DifferentialDrive robot_Drive_rd = new DifferentialDrive((SpeedController) left_Speed_Controller, right_Speed_Controller);
+    //private final DifferentialDrive robot_Drive_rd = new DifferentialDrive((SpeedController) left_Speed_Controller, right_Speed_Controller);
 
     @Override
     public void initDefaultCommand() {
