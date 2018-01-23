@@ -56,6 +56,22 @@ public class Pull_up_Hook extends Subsystem {
 
     // Put methods for controlling this subsystem
     // here. Call these from Commands.
-
+    public void stringIn() {
+    	spool.set(1.0);
+    }
+    
+    public void stringOut() {
+    	spool.set(-1.0);
+    }
+    
+    public void sprocketUp() {
+    	second_Stage_Left.set(1.0);
+    	second_Stage_Right.set(-1.0);
+    }
+    
+    public void sprocketDown() {
+    	second_Stage_Left.set(-1.0);
+    	second_Stage_Right.set(1.0);
+    }
 }
 
