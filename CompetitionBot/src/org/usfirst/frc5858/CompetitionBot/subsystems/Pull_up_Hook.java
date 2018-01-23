@@ -64,6 +64,10 @@ public class Pull_up_Hook extends Subsystem {
     	spool.set(-1.0);
     }
     
+    public void stringStop() {
+    	spool.set(0.0);
+    }
+    
     public void sprocketUp() {
     	second_Stage_Left.set(1.0);
     	second_Stage_Right.set(-1.0);
@@ -72,6 +76,11 @@ public class Pull_up_Hook extends Subsystem {
     public void sprocketDown() {
     	second_Stage_Left.set(-1.0);
     	second_Stage_Right.set(1.0);
+    }
+    
+    public void sprocketStop() {
+    	second_Stage_Left.set(0.0);
+    	second_Stage_Right.set(0.0);
     }
 }
 
