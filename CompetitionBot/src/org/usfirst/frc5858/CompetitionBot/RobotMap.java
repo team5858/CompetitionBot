@@ -34,12 +34,12 @@ public class RobotMap {
     public static TalonSRX drivetrainLeft_Speed_Controller;
     public static SpeedController drivetrainRight_Speed_Controller;
     //public static RobotDrive drivetrainRobot_Drive_rd;
-    public static SpeedController power_Cube_CannonLeft_Manipulator_1;
-    public static SpeedController power_Cube_CannonLeft_Manipulator_2;
-    public static SpeedController power_Cube_CannonRight_Manipulator_1;
-    public static SpeedController power_Cube_CannonRight_Manipulator_2;
-    public static SpeedController power_Cube_CannonLeft_Shoulder;
-    public static SpeedController power_Cube_CannonRight_Shoulder;
+    public static TalonSRX power_Cube_CannonLeft_Manipulator_1;
+    public static TalonSRX power_Cube_CannonLeft_Manipulator_2;
+    public static TalonSRX power_Cube_CannonRight_Manipulator_1;
+    public static TalonSRX power_Cube_CannonRight_Manipulator_2;
+    public static TalonSRX power_Cube_CannonLeft_Shoulder;
+    public static TalonSRX power_Cube_CannonRight_Shoulder;
     public static SpeedController pull_up_HookSpool;
     public static SpeedController pull_up_HookSecond_Stage_Left;
     public static SpeedController pull_up_HookSecond_Stage_Right;
@@ -84,24 +84,23 @@ public class RobotMap {
         
         */
 
-        power_Cube_CannonLeft_Manipulator_1 = new Spark(2);
-        LiveWindow.addActuator("Power_Cube_Cannon", "Left_Manipulator_1", (Spark) power_Cube_CannonLeft_Manipulator_1);
+        power_Cube_CannonLeft_Manipulator_1 = new TalonSRX(2);
         power_Cube_CannonLeft_Manipulator_1.setInverted(false);
-        power_Cube_CannonLeft_Manipulator_2 = new Spark(3);
-        LiveWindow.addActuator("Power_Cube_Cannon", "Left_Manipulator_2", (Spark) power_Cube_CannonLeft_Manipulator_2);
+        power_Cube_CannonLeft_Manipulator_2 = new TalonSRX(3);
         power_Cube_CannonLeft_Manipulator_2.setInverted(false);
-        power_Cube_CannonRight_Manipulator_1 = new Spark(4);
-        LiveWindow.addActuator("Power_Cube_Cannon", "Right_Manipulator_1", (Spark) power_Cube_CannonRight_Manipulator_1);
+        power_Cube_CannonRight_Manipulator_1 = new TalonSRX(4);
         power_Cube_CannonRight_Manipulator_1.setInverted(false);
-        power_Cube_CannonRight_Manipulator_2 = new Spark(5);
-        LiveWindow.addActuator("Power_Cube_Cannon", "Right_Manipulator_2", (Spark) power_Cube_CannonRight_Manipulator_2);
+        power_Cube_CannonRight_Manipulator_2 = new TalonSRX(5);
         power_Cube_CannonRight_Manipulator_2.setInverted(false);
-        power_Cube_CannonLeft_Shoulder = new Spark(6);
-        LiveWindow.addActuator("Power_Cube_Cannon", "Left_Shoulder", (Spark) power_Cube_CannonLeft_Shoulder);
+        power_Cube_CannonLeft_Shoulder = new TalonSRX(6);
         power_Cube_CannonLeft_Shoulder.setInverted(false);
-        power_Cube_CannonRight_Shoulder = new Spark(7);
-        LiveWindow.addActuator("Power_Cube_Cannon", "Right_Shoulder", (Spark) power_Cube_CannonRight_Shoulder);
+        power_Cube_CannonRight_Shoulder = new TalonSRX(7);
         power_Cube_CannonRight_Shoulder.setInverted(false);
+        
+        power_Cube_CannonLeft_Manipulator_2.follow(power_Cube_CannonLeft_Manipulator_1);
+        power_Cube_CannonRight_Manipulator_1.follow(power_Cube_CannonLeft_Manipulator_1);
+        power_Cube_CannonRight_Manipulator_2.follow(power_Cube_CannonLeft_Manipulator_1);
+        
         pull_up_HookSpool = new Spark(8);
         LiveWindow.addActuator("Pull_up_Hook", "Spool", (Spark) pull_up_HookSpool);
         pull_up_HookSpool.setInverted(false);
