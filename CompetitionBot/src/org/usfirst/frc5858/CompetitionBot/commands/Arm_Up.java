@@ -12,6 +12,7 @@
 package org.usfirst.frc5858.CompetitionBot.commands;
 import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc5858.CompetitionBot.Robot;
+import org.usfirst.frc5858.CompetitionBot.subsystems.PigeonBoard;
 
 /**
  *
@@ -43,12 +44,13 @@ public class Arm_Up extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
+    	Robot.pigeonBoard.getStatusIMU();
     }
-
+    
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
-        return false;
+        return true;
     }
 
     // Called once after isFinished returns true
