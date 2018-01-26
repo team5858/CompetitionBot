@@ -61,7 +61,7 @@ public class Power_Cube_Cannon extends Subsystem {
     }
     
     public void pullIn() {
-left_Manipulator_1.set(ControlMode.Velocity, );
+//left_Manipulator_1.set(ControlMode.Velocity, );
   
     }
 }
