@@ -13,6 +13,8 @@ package org.usfirst.frc5858.CompetitionBot;
 
 import org.usfirst.frc5858.CompetitionBot.commands.*;
 
+import com.ctre.phoenix.sensors.PigeonIMU;
+
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
@@ -28,8 +30,8 @@ public class OI {
     // One type of button is a joystick button which is any button on a joystick.
     // You create one by telling it which joystick it's on and which button
     // number it is.
-    // Joystick stick = new Joystick(port);
-    // Button button = new JoystickButton(stick, buttonNumber);
+    //Joystick stick = new Joystick(0);
+    //Button button = new JoystickButton(stick, 1);
 
     // There are a few additional built in buttons you can use. Additionally,
     // by subclassing Button you can create custom triggers and bind those to
@@ -65,7 +67,7 @@ public class OI {
     	a_button = new JoystickButton(j1, 1);
     	b_button = new JoystickButton(j1, 2);
     	
-    	a_button.whenPressed(new ZTEST_TalonSRXOn());
+    	a_button.whenPressed(new Arm_Up());
     	b_button.whenPressed(new ZTEST_TalonSRXOff());
     	
         // SmartDashboard Buttons
@@ -74,7 +76,7 @@ public class OI {
         SmartDashboard.putData("Push_Out", new Push_Out());
         SmartDashboard.putData("Arm_Up", new Arm_Up());
         SmartDashboard.putData("Arm_Down", new Arm_Down());
-        SmartDashboard.putData("Drive", new Drive());
+        //SmartDashboard.putData("Drive", new Drive());
         SmartDashboard.putData("Spool_In", new Spool_In());
         SmartDashboard.putData("Spool_Out", new Spool_Out());
         SmartDashboard.putData("Hook_Up", new Hook_Up());
