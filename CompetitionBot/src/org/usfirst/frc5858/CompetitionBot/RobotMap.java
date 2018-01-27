@@ -117,7 +117,7 @@ public class RobotMap {
         
         
         drivetrainRobot_Drive_rd = new DifferentialDrive(drivetrainLeft_Speed_Controller1, drivetrainRight_Speed_Controller1);
-        LiveWindow.addActuator("Drivetrain", "Right_Speed_Controller", (Talon) drivetrainRight_Speed_Controller);
+        LiveWindow.addActuator("Drivetrain", "Right_Speed_Controller", (WPI_TalonSRX) drivetrainRight_Speed_Controller1);
         pigeonIMU = new PigeonIMU(2);
         
         drivetrainRobot_Drive_rd.setExpiration(0.1);
