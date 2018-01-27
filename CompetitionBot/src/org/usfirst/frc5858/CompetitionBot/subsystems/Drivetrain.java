@@ -13,6 +13,7 @@ package org.usfirst.frc5858.CompetitionBot.subsystems;
 
 import org.usfirst.frc5858.CompetitionBot.RobotMap;
 import org.usfirst.frc5858.CompetitionBot.commands.*;
+import edu.wpi.first.wpilibj.AnalogInput;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
@@ -36,7 +37,9 @@ public class Drivetrain extends Subsystem {
 	public final TalonSRX left_Speed_Controller = RobotMap.drivetrainLeft_Speed_Controller1;
     private final TalonSRX right_Speed_Controller = RobotMap.drivetrainRight_Speed_Controller1;
     private final DifferentialDrive robot_Drive_rd = RobotMap.drivetrainRobot_Drive_rd;
-   
+    
+    private final AnalogInput ultrasonic = RobotMap.ultrasonic_Left;
+    
     public void setSpeed (double right, double left) {
 		left_Speed_Controller.set(ControlMode.PercentOutput, left);
 		right_Speed_Controller.set(ControlMode.PercentOutput, right);
@@ -91,6 +94,10 @@ public class Drivetrain extends Subsystem {
     	final double SCALE_FACTOR = 4096;
     	
     	left_Speed_Controller.set(ControlMode.Position, distance * SCALE_FACTOR);
+    }
+    public void getUltraRange() {
+    	double d = ultrasonic.getVoltage();
+    	SmartDashboard.putString("DB/String 1", "Range: " +  d);
     }
 }
 

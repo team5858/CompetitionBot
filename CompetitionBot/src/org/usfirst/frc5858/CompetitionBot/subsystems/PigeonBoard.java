@@ -53,7 +53,10 @@ public class PigeonBoard extends Subsystem {
     	double [] ypr = new double[3];
     	_pigeon.getYawPitchRoll(ypr);
     	System.out.println("Yaw:" + ypr[0]);
-
+    	
+    	double heading =_pigeon.getCompassHeading();
+    SmartDashboard.putString("DB/String 5", "Yaw" +ypr[0]);
+    SmartDashboard.putString("DB/String 6", "heading" +heading);
     }
 }
 
