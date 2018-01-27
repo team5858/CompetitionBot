@@ -51,14 +51,21 @@ public class Drivetrain extends Subsystem {
     public void initDefaultCommand() {
     	setDefaultCommand(new ZTEST_RunTalonJoystick());
     }
+    
+    @Override
+    public void periodic()
+    {
+    	
+    }
 
+    /*
     @Override
     public void periodic() {
         // Put code here to be run every loop
     	SmartDashboard.putNumber("Encoder Velocity", RobotMap.drivetrainLeft_Speed_Controller1.getSelectedSensorVelocity(0));
     	SmartDashboard.putNumber("Encoder Position", RobotMap.drivetrainLeft_Speed_Controller1.getSelectedSensorPosition(0));
         
-    }
+    }*/
 
     public void RunTalon()
     {
