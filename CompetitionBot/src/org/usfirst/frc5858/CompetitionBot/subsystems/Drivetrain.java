@@ -33,10 +33,20 @@ import edu.wpi.first.wpilibj.Talon;
  */
 public class Drivetrain extends Subsystem {
 
-	public final TalonSRX left_Speed_Controller = RobotMap.drivetrainLeft_Speed_Controller;
-    private final SpeedController right_Speed_Controller = RobotMap.drivetrainRight_Speed_Controller;
-    //private final DifferentialDrive robot_Drive_rd = new DifferentialDrive((SpeedController) left_Speed_Controller, right_Speed_Controller);
-
+	public final TalonSRX left_Speed_Controller = RobotMap.drivetrainLeft_Speed_Controller1;
+    private final TalonSRX right_Speed_Controller = RobotMap.drivetrainRight_Speed_Controller1;
+    private final DifferentialDrive robot_Drive_rd = RobotMap.drivetrainRobot_Drive_rd;
+   
+    public void setSpeed (double right, double left) {
+		left_Speed_Controller.set(ControlMode.PercentOutput, left);
+		right_Speed_Controller.set(ControlMode.PercentOutput, right);
+    }
+    public void gofoward (double distanceFeet) {
+    	
+    }
+    public void spin (double angleDegrees) {
+    	
+    }
     @Override
     public void initDefaultCommand() {
     	setDefaultCommand(new ZTEST_RunTalonJoystick());
@@ -45,8 +55,8 @@ public class Drivetrain extends Subsystem {
     @Override
     public void periodic() {
         // Put code here to be run every loop
-    	SmartDashboard.putNumber("Encoder Velocity", RobotMap.drivetrainLeft_Speed_Controller.getSelectedSensorVelocity(0));
-    	SmartDashboard.putNumber("Encoder Position", RobotMap.drivetrainLeft_Speed_Controller.getSelectedSensorPosition(0));
+    	SmartDashboard.putNumber("Encoder Velocity", RobotMap.drivetrainLeft_Speed_Controller1.getSelectedSensorVelocity(0));
+    	SmartDashboard.putNumber("Encoder Position", RobotMap.drivetrainLeft_Speed_Controller1.getSelectedSensorPosition(0));
         
     }
 
