@@ -29,7 +29,8 @@ public class Arm_Up extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	Robot.pigeonBoard.getStatusIMU();
+    	//Robot.pigeonBoard.getStatusIMU();
+    	Robot.drivetrain.getUltraRange();
     }
     
     // Make this return true when this Command no longer needs to run execute()
