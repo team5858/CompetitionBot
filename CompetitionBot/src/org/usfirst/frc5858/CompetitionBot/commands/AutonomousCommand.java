@@ -41,7 +41,7 @@ public class AutonomousCommand extends Command {
     	System.out.println("HERE");
     }
 
-    /sk Called repeatedly when this Command is scheduled to run
+    // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
     }
