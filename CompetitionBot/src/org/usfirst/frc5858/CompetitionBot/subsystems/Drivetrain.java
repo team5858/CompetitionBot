@@ -55,7 +55,9 @@ public class Drivetrain extends Subsystem {
     @Override
     public void periodic() {
         // Put code here to be run every loop
-
+    	SmartDashboard.putNumber("Encoder Velocity", RobotMap.drivetrainLeft_Speed_Controller1.getSelectedSensorVelocity(0));
+    	SmartDashboard.putNumber("Encoder Position", RobotMap.drivetrainLeft_Speed_Controller1.getSelectedSensorPosition(0));
+        
     }
 
     public void RunTalon()
@@ -77,5 +79,12 @@ public class Drivetrain extends Subsystem {
     {
     	left_Speed_Controller.set(ControlMode.Velocity, velocity);
     }
+    public void runTalonPosition(double distance/*ft*/)
+    {
+    	final double SCALE_FACTOR = 4096;
+    	
+    	left_Speed_Controller.set(ControlMode.Position, distance * SCALE_FACTOR);
+    }
 }
+
 
