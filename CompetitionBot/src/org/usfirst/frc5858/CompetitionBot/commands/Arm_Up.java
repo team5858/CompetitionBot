@@ -30,7 +30,9 @@ public class Arm_Up extends Command {
     @Override
     protected void execute() {
     	//Robot.pigeonBoard.getStatusIMU();
-    	Robot.drivetrain.getUltraRange();
+    	//Robot.drivetrain.getUltraRange();
+    	double position = Robot.power_Cube_Cannon.potentiometer();
+    	System.out.println("Position is "+position);
     }
     
     // Make this return true when this Command no longer needs to run execute()
