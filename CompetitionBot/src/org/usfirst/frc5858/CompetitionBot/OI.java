@@ -67,7 +67,8 @@ public class OI {
     	a_button = new JoystickButton(j1, 1);
     	b_button = new JoystickButton(j1, 2);
     	
-    	a_button.whenPressed(new Arm_Up());
+    	a_button.whenPressed(new Arm_To_Angle(30));
+    	a_button.whenReleased(new Arm_To_Angle(60));
     	b_button.whenPressed(new ZTEST_TalonSRXOff());
     	
         // SmartDashboard Buttons

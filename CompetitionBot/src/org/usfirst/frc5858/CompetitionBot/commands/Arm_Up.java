@@ -16,6 +16,8 @@ import edu.wpi.first.wpilibj.command.Command;
 
 public class Arm_Up extends Command {
 
+	boolean finished;
+	
     public Arm_Up() {
     
         requires(Robot.power_Cube_Cannon);
@@ -32,6 +34,11 @@ public class Arm_Up extends Command {
     	//Robot.pigeonBoard.getStatusIMU();
     	//Robot.drivetrain.getUltraRange();
     	double position = Robot.power_Cube_Cannon.potentiometer();
+    	if(position < 30.0 || position > 60.0) {
+    		return;
+    	}
+    	
+    	Robot.power_Cube_Cannon.armUp();
     	System.out.println("Position is "+position);
     }
     

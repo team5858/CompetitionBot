@@ -1,0 +1,8 @@
+.recommenders/
+.metadata/
+CompetitionBot/bin
+CompetitionBot/build/org
+CompetitionBot/dist
+bin/
+built/org
+dist
