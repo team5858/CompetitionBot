@@ -189,7 +189,7 @@ public class RobotMap {
         //pot = new AnalogPotentiometer(ultrasonic_ID, 360, 0);
     	pigeonIMU = new PigeonIMU(pigeon_IMU_ID);
     	
-        ultrasonic = new AnalogInput(potentiometer_ID);
+        ultrasonic = new AnalogInput(ultrasonic_ID);
         
 		AnalogInput.setGlobalSampleRate(10000);
     }
