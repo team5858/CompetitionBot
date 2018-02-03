@@ -120,6 +120,11 @@ public class Drivetrain extends Subsystem {
 		pigeon.getYawPitchRoll(ypr_deg);
 		return ypr_deg[0];
     }
+
+	public void setSpeed(double right, double left) {
+		// TODO Auto-generated method stub
+		
+	}
     
     
 }

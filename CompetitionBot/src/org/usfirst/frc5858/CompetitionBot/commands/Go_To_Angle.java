@@ -1,32 +1,67 @@
 package org.usfirst.frc5858.CompetitionBot.commands;
 
+import org.usfirst.frc5858.CompetitionBot.Robot;
+import org.usfirst.frc5858.CompetitionBot.subsystems.Drivetrain;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
 public class Go_To_Angle extends Command {
-
-    public Go_To_Angle() {
+	private double startAngle; 
+	private double targetAngle;
+	private double degrees; 
+	
+    public Go_To_Angle(double degrees) {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+    	requires(Robot.drivetrain);
+    	this.degrees = degrees;
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	startAngle = Robot.drivetrain.getGyroscope();
+    	targetAngle = startAngle + degrees;
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	//targetAngle = Robot.drivetrain.getGyroscope() degrees()
+    			//if variable 
+    	if (degrees > 0) {
+    		
+    		//double angle = startAngle - targetAngle;
+    		//.degrees.for (int)
+    		Robot.drivetrain.robot_Drive_rd.arcadeDrive(0, 1);  
+    	}
+    	else if (degrees < 0) {
+    		Robot.drivetrain.robot_Drive_rd.arcadeDrive(0, -1);
+    	}
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        
+       double current = Robot.drivetrain.getGyroscope();
+       if (degrees > 0) {
+    	   if (current >= targetAngle) {
+    		   return true;
+    	   }
+       }
+       else if (degrees < 0) {
+    	   if (current <= targetAngle) {
+    		   return true;
+    	   }
+       }
+       
+       return false;
     }
 
     // Called once after isFinished returns true
     protected void end() {
+    	Robot.drivetrain.robot_Drive_rd.stopMotor();
     }
 
     // Called when another command which requires one or more of the same
