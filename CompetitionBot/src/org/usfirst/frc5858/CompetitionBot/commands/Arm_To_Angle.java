@@ -28,7 +28,6 @@ public class Arm_To_Angle extends Command {
     		finished = false;	
 	        // Use requires() here to declare subsystem dependencies
 	        
-	        
 	        current = Robot.power_Cube_Cannon.potentiometer();
 	        if(current < angle) {
 	        	isUp = true;
