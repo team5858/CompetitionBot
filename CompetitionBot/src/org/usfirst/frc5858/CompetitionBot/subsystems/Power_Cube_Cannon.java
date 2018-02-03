@@ -11,6 +11,7 @@
 
 package org.usfirst.frc5858.CompetitionBot.subsystems;
 
+import org.usfirst.frc5858.CompetitionBot.Robot;
 import org.usfirst.frc5858.CompetitionBot.RobotMap;
 import org.usfirst.frc5858.CompetitionBot.commands.*;
 
@@ -64,10 +65,26 @@ public class Power_Cube_Cannon extends Subsystem {
     }
     
     public void pullIn() {
-    	//left_Manipulator_1.set(ControlMode.Velocity, );
-  
+    	// This is necessary to run Robot.power_Cube_Cannon.pullIn();
+    	left_Manipulator_1.set(ControlMode.PercentOutput, 1.0);
+    	left_Manipulator_2.set(ControlMode.PercentOutput, 1.0);
+    	right_Manipulator_1.set(ControlMode.PercentOutput, -1.0);
+    	right_Manipulator_2.set(ControlMode.PercentOutput, -1.0);
     }
-    
+    public void pushOut() {
+    	//This is necessary to run Robot.power_Cube_Cannon.pushOut();
+    	left_Manipulator_1.set(ControlMode.PercentOutput, -1.0);
+    	left_Manipulator_2.set(ControlMode.PercentOutput, -1.0);
+    	right_Manipulator_1.set(ControlMode.PercentOutput, 1.0);
+    	right_Manipulator_2.set(ControlMode.PercentOutput, 1.0);
+    }
+    public void wheelsStop() {
+    	//This is necessary to run Robot.power_Cube_Cannon.wheelsStop();
+    	left_Manipulator_1.set(ControlMode.PercentOutput, 0.0);
+    	left_Manipulator_2.set(ControlMode.PercentOutput, 0.0);
+    	right_Manipulator_1.set(ControlMode.PercentOutput, 0.0);
+    	right_Manipulator_2.set(ControlMode.PercentOutput, 0.0);
+    }
     public void armUp() {
     	shoulder.set(ControlMode.PercentOutput, 0.5);
     }
