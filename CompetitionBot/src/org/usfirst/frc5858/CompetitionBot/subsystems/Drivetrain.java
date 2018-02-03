@@ -44,6 +44,7 @@ public class Drivetrain extends Subsystem {
     public final DifferentialDrive robot_Drive_rd = RobotMap.drivetrainRobot_Drive_rd;
     
     public final AnalogInput ultrasonic = RobotMap.ultrasonic;
+    public final Ultrasonic digitalsonic = RobotMap.digitalsonic;
     public final PigeonIMU pigeon = RobotMap.pigeonIMU;
     
     @Override
@@ -98,6 +99,12 @@ public class Drivetrain extends Subsystem {
     	NumberFormat formatter = new DecimalFormat("#0.00");
     	String decimal = formatter.format(d);
     	SmartDashboard.putString("DB/String 1", "Range: " +  decimal);
+    	return d;
+    }
+    
+    public double getDigitalRange() {
+    	double d = digitalsonic.getRangeInches();
+    	System.out.println("d " +d);
     	return d;
     }
     

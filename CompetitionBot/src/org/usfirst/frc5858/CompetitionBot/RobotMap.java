@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
 import edu.wpi.first.wpilibj.Spark;
 import edu.wpi.first.wpilibj.SpeedController;
+import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.interfaces.Potentiometer;
 
@@ -42,6 +43,7 @@ public class RobotMap {
     public static SpeedController pull_up_HookSecond_Stage_Left;
     public static SpeedController pull_up_HookSecond_Stage_Right;
     public static AnalogInput ultrasonic;
+    public static Ultrasonic digitalsonic;
     
     public static PigeonIMU pigeonIMU;
     public static Potentiometer pot;
@@ -164,6 +166,8 @@ public class RobotMap {
     	pigeonIMU = new PigeonIMU(pigeon_IMU_ID);
     	
         ultrasonic = new AnalogInput(ultrasonic_ID);
+        
+        digitalsonic = new Ultrasonic(1,2);
         
 		AnalogInput.setGlobalSampleRate(10000);
     }
