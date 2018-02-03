@@ -43,7 +43,7 @@ public class Stop extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-    	//todo to hook up
+    	Robot.drivetrain.robot_Drive_rd.arcadeDrive(0, 0);
     }
 
     // Make this return true when this Command no longer needs to run execute()

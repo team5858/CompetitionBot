@@ -46,20 +46,6 @@ public class Drivetrain extends Subsystem {
     public final AnalogInput ultrasonic = RobotMap.ultrasonic;
     public final PigeonIMU pigeon = RobotMap.pigeonIMU;
     
-    /*
-    public void setSpeed (double right, double left) {
-		left_Speed_Controller.set(ControlMode.PercentOutput, left);
-		right_Speed_Controller.set(ControlMode.PercentOutput, right);
-    }
-    
-    public void gofoward (double distanceFeet) {
-    	
-    }
-    public void spin (double angleDegrees) {
-    	
-    }
-    */
-    
     @Override
     public void initDefaultCommand() {
     	setDefaultCommand(new JoystickDrive());
