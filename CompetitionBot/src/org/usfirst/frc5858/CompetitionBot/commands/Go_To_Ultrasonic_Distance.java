@@ -35,6 +35,8 @@ public class Go_To_Ultrasonic_Distance extends Command {
         else if (current > Ultrasonic_Distance) {
         	return false;
         }
+        
+        return false;
     }
 
     // Called once after isFinished returns true
