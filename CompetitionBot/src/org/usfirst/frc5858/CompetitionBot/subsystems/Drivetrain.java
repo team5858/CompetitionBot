@@ -113,6 +113,11 @@ public class Drivetrain extends Subsystem {
 		pigeon.getYawPitchRoll(ypr_deg);
 		return ypr_deg[0];
     }
+
+	public double getAngle() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
     
     
 }
