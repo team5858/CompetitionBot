@@ -11,9 +11,7 @@
 
 package org.usfirst.frc5858.CompetitionBot.subsystems;
 
-import org.usfirst.frc5858.CompetitionBot.Robot;
 import org.usfirst.frc5858.CompetitionBot.RobotMap;
-import org.usfirst.frc5858.CompetitionBot.commands.*;
 
 import com.ctre.phoenix.motorcontrol.ControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
