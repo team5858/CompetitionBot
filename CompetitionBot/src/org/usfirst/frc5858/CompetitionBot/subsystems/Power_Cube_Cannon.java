@@ -73,10 +73,10 @@ public class Power_Cube_Cannon extends Subsystem {
     }
     public void pushOut() {
     	//This is necessary to run Robot.power_Cube_Cannon.pushOut();
-    	left_Manipulator_1.set(ControlMode.PercentOutput, -1.0);
-    	left_Manipulator_2.set(ControlMode.PercentOutput, -1.0);
-    	right_Manipulator_1.set(ControlMode.PercentOutput, 1.0);
-    	right_Manipulator_2.set(ControlMode.PercentOutput, 1.0);
+    	left_Manipulator_1.set(ControlMode.PercentOutput, -0.5);
+    	left_Manipulator_2.set(ControlMode.PercentOutput, -0.5);
+    	right_Manipulator_1.set(ControlMode.PercentOutput, 0.5);
+    	right_Manipulator_2.set(ControlMode.PercentOutput, 0.5);
     }
     public void wheelsStop() {
     	//This is necessary to run Robot.power_Cube_Cannon.wheelsStop();

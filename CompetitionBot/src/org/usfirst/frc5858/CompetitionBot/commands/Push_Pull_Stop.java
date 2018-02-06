@@ -1,5 +1,7 @@
 package org.usfirst.frc5858.CompetitionBot.commands;
 
+import org.usfirst.frc5858.CompetitionBot.Robot;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -18,6 +20,7 @@ public class Push_Pull_Stop extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.power_Cube_Cannon.wheelsStop();
     }
 
     // Make this return true when this Command no longer needs to run execute()

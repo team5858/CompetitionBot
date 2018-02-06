@@ -44,21 +44,8 @@ public class Drivetrain extends Subsystem {
     public final DifferentialDrive robot_Drive_rd = RobotMap.drivetrainRobot_Drive_rd;
     
     public final AnalogInput ultrasonic = RobotMap.ultrasonic;
+    public final Ultrasonic digitalsonic = RobotMap.digitalsonic;
     public final PigeonIMU pigeon = RobotMap.pigeonIMU;
-    
-    /*
-    public void setSpeed (double right, double left) {
-		left_Speed_Controller.set(ControlMode.PercentOutput, left);
-		right_Speed_Controller.set(ControlMode.PercentOutput, right);
-    }
-    
-    public void gofoward (double distanceFeet) {
-    	
-    }
-    public void spin (double angleDegrees) {
-    	
-    }
-    */
     
     @Override
     public void initDefaultCommand() {
@@ -115,11 +102,22 @@ public class Drivetrain extends Subsystem {
     	return d;
     }
     
+    public double getDigitalRange() {
+    	double d = digitalsonic.getRangeInches();
+    	System.out.println("d " +d);
+    	return d;
+    }
+    
     public double getGyroscope() {
     	double[] ypr_deg = null;
 		pigeon.getYawPitchRoll(ypr_deg);
 		return ypr_deg[0];
     }
+
+	public double getAngle() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
     
     
 }
