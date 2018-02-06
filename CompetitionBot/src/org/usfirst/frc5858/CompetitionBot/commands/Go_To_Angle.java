@@ -1,7 +1,6 @@
 package org.usfirst.frc5858.CompetitionBot.commands;
 
 import org.usfirst.frc5858.CompetitionBot.Robot;
-import org.usfirst.frc5858.CompetitionBot.subsystems.Drivetrain;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -25,7 +24,7 @@ public class Go_To_Angle extends Command {
     protected void initialize() {
     	startAngle = Robot.drivetrain.getGyroscope();
     	targetAngle = startAngle + degrees;
-    	Robot.drivetrain.robot_Drive_rd.arcadeDrive(0, speed);
+    	//Robot.drivetrain.robot_Drive_rd.arcadeDrive(0, speed);
     }
 
     // Called repeatedly when this Command is scheduled to run
