@@ -13,27 +13,24 @@ public class Go_To_Angle extends Command {
 	private double targetAngle;
 	private double degrees; 
 	
-    public Go_To_Angle(double degrees) {
-        // Use requires() here to declare subsystem dependencies
-        // eg. requires(chassis);
-    	requires(Robot.drivetrain);
-    	this.degrees = degrees;
-    }
+        public Go_To_Angle(double degrees) {
+            // Use requires() here to declare subsystem dependencies
+            // eg. requires(chassis);
+    	    requires(Robot.drivetrain);
+    	    this.degrees = degrees;
+        }
 
-    // Called just before this Command runs the first time
+
+	// Called just before this Command runs the first time
     protected void initialize() {
     	startAngle = Robot.drivetrain.getGyroscope();
     	targetAngle = startAngle + degrees;
+    	Robot.drivetrain.robot_Drive_rd.arcadeDrive(0, speed);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	//targetAngle = Robot.drivetrain.getGyroscope() degrees()
-    			//if variable 
     	if (degrees > 0) {
-    		
-    		//double angle = startAngle - targetAngle;
-    		//.degrees.for (int)
     		Robot.drivetrain.robot_Drive_rd.arcadeDrive(0, 1);  
     	}
     	else if (degrees < 0) {
