@@ -13,6 +13,7 @@ import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.interfaces.Potentiometer;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -47,7 +48,6 @@ public class RobotMap {
     
     public static PigeonIMU pigeonIMU;
     public static Potentiometer pot;
-    
     // CAN IDs
     //private static final int driveLeft1_ID = 9; //2;
     private static final int driveLeft2_ID = 10; //3;
@@ -75,7 +75,7 @@ public class RobotMap {
         final int timeoutMs = 10;
         final int loopIdx = 0;
         //final int slotIdx = 0;
-    	
+        
         drivetrainLeft_Speed_Controller1 = new WPI_TalonSRX(25);
         //drivetrainLeft_Speed_Controller1 = new WPI_TalonSRX(driveLeft1_ID);
         

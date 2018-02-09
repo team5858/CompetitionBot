@@ -44,7 +44,13 @@ public class Robot extends TimedRobot {
         pigeonBoard = new PigeonBoard();
        
         oi = new OI();
-
+        
+        String[] autonomousCommands = new String[3];
+   	    autonomousCommands[0]  = "leftSwitch";
+   	    autonomousCommands[1]  = "rightSwitch";
+	    autonomousCommands[2]  = "driveStraight";
+	    SmartDashboard.putStringArray("Auto List", autonomousCommands);
+   	 
         chooser.addDefault("Autonomous Command", new AutonomousCommand());
 
         SmartDashboard.putData("Auto mode", chooser);
@@ -69,6 +75,7 @@ public class Robot extends TimedRobot {
         autonomousCommand = chooser.getSelected();
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
+        String autoModeSelected = SmartDashboard.getString("Auto Selector","");
     }
 
     /**
