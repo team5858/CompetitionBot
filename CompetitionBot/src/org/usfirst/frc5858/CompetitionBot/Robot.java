@@ -75,7 +75,7 @@ public class Robot extends TimedRobot {
         autonomousCommand = chooser.getSelected();
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
-        String autoModeSelected = SmartDashboard.getString("Auto Selector","");
+       // String autoModeSelected = SmartDashboard.getString("Auto Selector","");
     }
 
     /**
