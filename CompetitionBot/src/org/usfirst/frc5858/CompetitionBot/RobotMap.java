@@ -23,7 +23,7 @@ import edu.wpi.first.wpilibj.interfaces.Potentiometer;
  */
 public class RobotMap {  
 	// Drivetrain motor controllers
-    public static WPI_TalonSRX drivetrainLeft_Speed_Controller1;
+	public static WPI_TalonSRX drivetrainLeft_Speed_Controller1;
     public static WPI_TalonSRX drivetrainRight_Speed_Controller1;
     
     public static WPI_TalonSRX drivetrainLeft_Speed_Controller2;
@@ -148,11 +148,13 @@ public class RobotMap {
         
         
         // PULL UP HOOK
-        pull_up_HookSpool = new VictorSP(climberStageTwo1_PWMID);
+        pull_up_HookSpool = new VictorSP(climberStageOne1_PWMID);
         pull_up_HookSpool.setInverted(false);
-        pull_up_HookSecond_Stage_Left = new VictorSP(climberStageTwo2_PWMID);
+        
+        pull_up_HookSecond_Stage_Left = new VictorSP(climberStageTwo1_PWMID);
         pull_up_HookSecond_Stage_Left.setInverted(false);
-        pull_up_HookSecond_Stage_Right = new VictorSP(climberStageOne1_PWMID);
+        
+        pull_up_HookSecond_Stage_Right = new VictorSP(climberStageTwo2_PWMID);
         pull_up_HookSecond_Stage_Right.setInverted(false);
 
     	pot = new AnalogPotentiometer(potentiometer_AID, 90, 0);

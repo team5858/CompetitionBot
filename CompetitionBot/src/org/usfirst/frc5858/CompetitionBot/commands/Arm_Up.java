@@ -33,13 +33,13 @@ public class Arm_Up extends Command {
     protected void execute() {
     	//Robot.pigeonBoard.getStatusIMU();
     	//Robot.drivetrain.getUltraRange();
-    	double position = Robot.power_Cube_Cannon.potentiometer();
-    	if(position < 30.0 || position > 60.0) {
-    		return;
-    	}
+    	//double position = Robot.power_Cube_Cannon.potentiometer();
+    //	if(position < 30.0 || position > 60.0) {
+    		//return;
+   // 	}
     	
     	Robot.power_Cube_Cannon.armUp();
-    	System.out.println("Position is "+position);
+    	//System.out.println("Position is "+position);
     }
     
     // Make this return true when this Command no longer needs to run execute()
