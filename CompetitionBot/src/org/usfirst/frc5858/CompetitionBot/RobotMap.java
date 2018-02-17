@@ -95,14 +95,16 @@ public class RobotMap {
         drivetrainLeft_Speed_Controller1.config_kP(loopIdx, 0.113333, timeoutMs);
         drivetrainLeft_Speed_Controller1.config_kI(loopIdx, 0, timeoutMs);
         drivetrainLeft_Speed_Controller1.config_kD(loopIdx, 0, timeoutMs);        
-        drivetrainLeft_Speed_Controller1.setInverted(false);
+        drivetrainLeft_Speed_Controller1.setInverted(true);
         
         drivetrainLeft_Speed_Controller2 = new WPI_TalonSRX(driveLeft2_CID);
         drivetrainLeft_Speed_Controller2.follow(drivetrainLeft_Speed_Controller1);
+        drivetrainLeft_Speed_Controller2.setInverted(true);
         
         drivetrainLeft_Speed_Controller3 = new WPI_TalonSRX(driveLeft3_CID);
         drivetrainLeft_Speed_Controller3.follow(drivetrainLeft_Speed_Controller1);
-
+        drivetrainLeft_Speed_Controller3.setInverted(true);
+        
         drivetrainRight_Speed_Controller1 = new WPI_TalonSRX(driveRight1_CID);        
         drivetrainRight_Speed_Controller1.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
         drivetrainRight_Speed_Controller1.setSensorPhase(true);
@@ -114,13 +116,15 @@ public class RobotMap {
         drivetrainRight_Speed_Controller1.config_kP(loopIdx, 0.113333, timeoutMs);
         drivetrainRight_Speed_Controller1.config_kI(loopIdx, 0, timeoutMs);
         drivetrainRight_Speed_Controller1.config_kD(loopIdx, 0, timeoutMs);
-        drivetrainRight_Speed_Controller1.setInverted(false);
+        drivetrainRight_Speed_Controller1.setInverted(true);
         
         drivetrainRight_Speed_Controller2 = new WPI_TalonSRX(driveRight2_CID);
         drivetrainRight_Speed_Controller2.follow(drivetrainRight_Speed_Controller1);
+        drivetrainRight_Speed_Controller2.setInverted(true);
         
         drivetrainRight_Speed_Controller3 = new WPI_TalonSRX(driveRight3_CID);
         drivetrainRight_Speed_Controller3.follow(drivetrainRight_Speed_Controller1);  
+        drivetrainRight_Speed_Controller3.setInverted(true);
         
         // ROBOT DRIVE
         drivetrainRobot_Drive_rd = new DifferentialDrive(drivetrainLeft_Speed_Controller1, drivetrainRight_Speed_Controller1);             
