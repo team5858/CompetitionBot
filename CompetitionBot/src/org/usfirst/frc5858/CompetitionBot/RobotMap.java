@@ -64,6 +64,7 @@ public class RobotMap {
     private static final int powerCubeCannonLeft2_CID    = 10; //9;
     private static final int powerCubeCannonRight1_CID   = 11; //10;
     private static final int powerCubeCannonRight2_CID   = 12; //11;
+    
     private static final int actuator1_CID = 8;
     private static final int pigeon_IMU_CID = 13;
     

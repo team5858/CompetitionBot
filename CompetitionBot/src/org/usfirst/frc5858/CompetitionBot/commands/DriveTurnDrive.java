@@ -12,8 +12,8 @@ public class DriveTurnDrive extends CommandGroup {
     public DriveTurnDrive(double firstdistance, double angle, double seconddistance) {
     	requires(Robot.drivetrain);
         addSequential (new Go_To_Distance(firstdistance,0.5));
-       //addSequential (new Go_To_Angle(angle, 0.5));
-        //addSequential (new Go_To_Distance(seconddistance,0.2));
+        addSequential (new Go_To_Angle(angle, 0.5));
+        addSequential (new Go_To_Distance(seconddistance,0.2));
         
     	// Add Commands here:
         // e.g. addSequential(new Command1());

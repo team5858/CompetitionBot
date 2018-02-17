@@ -29,7 +29,7 @@ public class Robot extends TimedRobot {
     public static Drivetrain drivetrain;
     public static Power_Cube_Cannon power_Cube_Cannon;
     public static Pull_up_Hook pull_up_Hook;
-    public static PigeonBoard pigeonBoard;
+    //public static PigeonBoard pigeonBoard;
 
     /**
      * This function is run when the robot is first started up and should be
@@ -41,7 +41,7 @@ public class Robot extends TimedRobot {
         drivetrain = new Drivetrain();
         power_Cube_Cannon = new Power_Cube_Cannon();
         pull_up_Hook = new Pull_up_Hook();
-        pigeonBoard = new PigeonBoard();
+        //pigeonBoard = new PigeonBoard();
        
         oi = new OI();
         

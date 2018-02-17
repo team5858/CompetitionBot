@@ -11,13 +11,15 @@ public class Go_To_Angle extends Command {
 	private double startAngle; 
 	private double targetAngle;
 	private double degrees; 
+	private double speeds;
 	
-        public Go_To_Angle(double degrees) {
-            // Use requires() here to declare subsystem dependencies
-            // eg. requires(chassis);
-    	    requires(Robot.drivetrain);
-    	    this.degrees = degrees;
-        }
+    public Go_To_Angle(double degrees, double speeds) {
+        // Use requires() here to declare subsystem dependencies
+        // eg. requires(chassis);
+	    requires(Robot.drivetrain);
+	    this.degrees = degrees;
+	    this.speeds = speeds;
+    }
 
 
 	// Called just before this Command runs the first time
@@ -30,10 +32,10 @@ public class Go_To_Angle extends Command {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	if (degrees > 0) {
-    		Robot.drivetrain.robot_Drive_rd.arcadeDrive(0, 1);  
+    		Robot.drivetrain.robot_Drive_rd.arcadeDrive(0, speeds);  
     	}
     	else if (degrees < 0) {
-    		Robot.drivetrain.robot_Drive_rd.arcadeDrive(0, -1);
+    		Robot.drivetrain.robot_Drive_rd.arcadeDrive(0, -speeds);
     	}
     }
 

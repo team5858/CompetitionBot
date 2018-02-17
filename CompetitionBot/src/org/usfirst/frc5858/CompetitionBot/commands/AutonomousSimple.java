@@ -8,10 +8,12 @@ import edu.wpi.first.wpilibj.command.Command;
  *
  */
 public class AutonomousSimple extends Command {
-public static final double DISTANCETOGO = 1;
+    public static final double DISTANCETOGO = 1;
+
     public AutonomousSimple() {
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
+    	requires(Robot.drivetrain);
     }
 
     // Called just before this Command runs the first time
