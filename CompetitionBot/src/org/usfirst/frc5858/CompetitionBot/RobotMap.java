@@ -40,10 +40,11 @@ public class RobotMap {
     public static VictorSPX power_Cube_CannonRight_Manipulator_2;
     public static TalonSRX power_Cube_Shoulder;
     public static VictorSPX power_Cube_CannonRight_Shoulder;
-
+/*
     public static SpeedController pull_up_HookSpool;
     public static SpeedController pull_up_HookSecond_Stage_Left;
     public static SpeedController pull_up_HookSecond_Stage_Right;
+    */
     public static AnalogInput ultrasonic;
     public static Ultrasonic digitalsonic;
     
@@ -67,10 +68,11 @@ public class RobotMap {
     private static final int pigeon_IMU_CID = 13;
     
     //pwm ids
+    /*
     private static final int climberStageTwo1_PWMID = 0;
     private static final int climberStageTwo2_PWMID = 1;
     private static final int climberStageOne1_PWMID = 2;
-    
+    */
     // ANALOG IDs
     private static final int ultrasonic_AID = 0;
     private static final int potentiometer_AID = 1;
@@ -148,6 +150,7 @@ public class RobotMap {
         
         
         // PULL UP HOOK
+        /*
         pull_up_HookSpool = new VictorSP(climberStageOne1_PWMID);
         pull_up_HookSpool.setInverted(false);
         
@@ -156,7 +159,7 @@ public class RobotMap {
         
         pull_up_HookSecond_Stage_Right = new VictorSP(climberStageTwo2_PWMID);
         pull_up_HookSecond_Stage_Right.setInverted(false);
-
+*/
     	pot = new AnalogPotentiometer(potentiometer_AID, 90, 0);
                 
     	// SENSORS
