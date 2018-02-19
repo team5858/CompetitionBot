@@ -61,14 +61,14 @@ public class Power_Cube_Cannon extends Subsystem {
 
     }
     
-    public void pullIn() {
+    public void pushOut() {
     	// This is necessary to run Robot.power_Cube_Cannon.pullIn();
     	left_Manipulator_1.set(ControlMode.PercentOutput, 1.0);
     	left_Manipulator_2.set(ControlMode.PercentOutput, 1.0);
     	right_Manipulator_1.set(ControlMode.PercentOutput, -1.0);
     	right_Manipulator_2.set(ControlMode.PercentOutput, -1.0);
     }
-    public void pushOut() {
+    public void pullIn() {
     	//This is necessary to run Robot.power_Cube_Cannon.pushOut();
     	left_Manipulator_1.set(ControlMode.PercentOutput, -0.5);
     	left_Manipulator_2.set(ControlMode.PercentOutput, -0.5);

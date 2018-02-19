@@ -22,8 +22,8 @@ public class JoystickDrive extends Command {
     // Called just before this Command runs the first time
     protected void initialize() {
     	Joystick j = new Joystick(0);
-        this.power = j.getRawAxis(1) * 0.3;
-        this.rotation = j.getRawAxis(2);
+        this.power = j.getRawAxis(1) * 1;
+        this.rotation = j.getRawAxis(2) * 0.7;
     }
 
     // Called repeatedly when this Command is scheduled to run
