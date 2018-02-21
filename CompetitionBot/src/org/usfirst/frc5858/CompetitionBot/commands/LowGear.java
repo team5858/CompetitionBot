@@ -2,41 +2,30 @@ package org.usfirst.frc5858.CompetitionBot.commands;
 
 import org.usfirst.frc5858.CompetitionBot.Robot;
 
-import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class JoystickDrive extends Command {
+public class LowGear extends Command {
 
-	double power;
-	double rotation;
-	
-    public JoystickDrive() {
+    public LowGear() {
         // Use requires() here to declare subsystem dependencies
-        requires(Robot.drivetrain);
-        
+       requires(Robot.drivetrain);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Joystick j = new Joystick(0);
-    	double powerAxis = j.getRawAxis(1);
-        this.power = powerAxis * powerAxis * powerAxis;
-        double rotationAxis = j.getRawAxis(2);
-        this.rotation = rotationAxis * rotationAxis * rotationAxis * 0.5;
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drivetrain.getUltraRange();
-    	Robot.drivetrain.robot_Drive_rd.arcadeDrive(power, rotation);
+    	Robot.drivetrain.lowGear();
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return true;
+        return false;
     }
 
     // Called once after isFinished returns true

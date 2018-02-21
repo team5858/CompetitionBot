@@ -21,38 +21,36 @@ public class OI {
 	Button b_button;
 	Button x_button;
 	Button y_button;
+	Button lb_button;
+	Button rb_button;
+	Button lt_button;
+	Button rt_button;
 	
     public OI() {
     	j1 = new Joystick(0);
-    	a_button = new JoystickButton(j1, 3);
-    	b_button = new JoystickButton(j1, 2);
     	x_button = new JoystickButton(j1, 1);
+    	a_button = new JoystickButton(j1, 2);
+    	b_button = new JoystickButton(j1, 3);
     	y_button = new JoystickButton(j1, 4);
+    	lb_button = new JoystickButton(j1, 5);
+    	rb_button = new JoystickButton(j1, 6);
+    	lt_button = new JoystickButton(j1, 7);
+    	rt_button = new JoystickButton(j1, 8);
     	
-    	/*a_button.whenPressed(new Arm_To_Angle(30));
-    	a_button.whenReleased(new Arm_To_Angle(60));
-    	x_button.whenPressed(new Arm_To_Angle(60));
-    	b_button.whenPressed(new ZTEST_TalonSRXOff());
-    	b_button.whenPressed(new Drive_Motors(0.2, 0.2));
-    	b_button.whenReleased(new Stop());*/
+    	a_button.whenPressed(new HighGear());
+    	b_button.whenPressed(new LowGear());
     	
-    	//a_button.whenPressed(new Pull_In());
-    	//a_button.whenReleased(new Push_Pull_Stop());
-    	//b_button.whenPressed(new Push_Out());
-    	//b_button.whenReleased(new Push_Pull_Stop());
+    	lb_button.whenPressed(new Pull_In());
+    	lb_button.whenReleased(new Push_Pull_Stop());
     	
-    	a_button.whenPressed(new Push_Out());
-    	a_button.whenReleased(new Push_Pull_Stop());
+    	rb_button.whenPressed(new Push_Out());
+    	rb_button.whenReleased(new Push_Pull_Stop());
     	
-    	b_button.whenPressed(new Pull_In());
-    	b_button.whenReleased(new Push_Pull_Stop());
-    	
-    	
-    	x_button.whenPressed(new Spool_In());
-        x_button.whenReleased(new Spool_Stop());
+    	lt_button.whenPressed(new Arm_Up());
+        lt_button.whenReleased(new Arm_Stop());
         
-    	y_button.whenPressed(new Spool_Out());
-    	y_button.whenReleased(new Spool_Stop());
+    	rt_button.whenPressed(new Arm_Down());
+    	rt_button.whenReleased(new Arm_Stop());
     	
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());

@@ -10,6 +10,7 @@ import com.ctre.phoenix.sensors.PigeonIMU;
 
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.VictorSP;
@@ -68,6 +69,8 @@ public class RobotMap {
     
     private static final int actuator1_CID = 8;
     private static final int pigeon_IMU_CID = 13;
+    public static DoubleSolenoid leftGearBox;
+    public static DoubleSolenoid rightGearBox;
     
     //pwm ids
     /*
@@ -157,6 +160,7 @@ public class RobotMap {
         //power_Cube_Shoulder = new TalonSRX(powerCubeCannonShoulder_ID);
         power_Cube_Shoulder = new TalonSRX(actuator1_CID);
         power_Cube_Shoulder.setInverted(false);
+        power_Cube_Shoulder.setNeutralMode(NeutralMode.Brake);
         
         power_Cube_CannonLeft_Manipulator_2.follow(power_Cube_CannonLeft_Manipulator_1);
         power_Cube_CannonRight_Manipulator_1.follow(power_Cube_CannonLeft_Manipulator_1);
@@ -173,7 +177,7 @@ public class RobotMap {
         
         pull_up_HookSecond_Stage_Right = new VictorSP(climberStageTwo2_PWMID);
         pull_up_HookSecond_Stage_Right.setInverted(false);
-*/
+        */
     	pot = new AnalogPotentiometer(potentiometer_AID, 90, 0);
                 
     	// SENSORS
@@ -183,5 +187,8 @@ public class RobotMap {
         ultrasonic = new AnalogInput(ultrasonic_AID);
         
 		AnalogInput.setGlobalSampleRate(10000);
+		
+		leftGearBox = new DoubleSolenoid(1,2);
+		rightGearBox = new DoubleSolenoid(3,4);
     }
 }

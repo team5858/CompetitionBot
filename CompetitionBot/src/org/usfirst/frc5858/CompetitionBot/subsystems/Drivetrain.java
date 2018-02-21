@@ -22,6 +22,7 @@ import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import com.ctre.phoenix.sensors.PigeonIMU;
 
 import edu.wpi.first.wpilibj.AnalogInput;
+import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.Ultrasonic;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
@@ -42,6 +43,8 @@ public class Drivetrain extends Subsystem {
     public final AnalogInput ultrasonic = RobotMap.ultrasonic;
     public final Ultrasonic digitalsonic = RobotMap.digitalsonic;
     public final PigeonIMU pigeon = RobotMap.pigeonIMU;
+    public final DoubleSolenoid leftGearBox = RobotMap.leftGearBox;
+    public final DoubleSolenoid rightGearBox = RobotMap.rightGearBox;
     
     @Override
     public void initDefaultCommand() {
@@ -118,7 +121,15 @@ public class Drivetrain extends Subsystem {
         // TODO Auto-generated method stub
         return 0;
     }
+    public void lowGear() {
+    	leftGearBox.set(DoubleSolenoid.Value.kReverse);
+    	rightGearBox.set(DoubleSolenoid.Value.kReverse);
+    }
     
+    public void highGear() {
+    	leftGearBox.set(DoubleSolenoid.Value.kForward);
+    	rightGearBox.set(DoubleSolenoid.Value.kForward);
+    }
     
 }
 
