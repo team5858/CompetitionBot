@@ -28,14 +28,14 @@ public class OI {
 	
     public OI() {
     	j1 = new Joystick(0);
-    	x_button = new JoystickButton(j1, 1);
-    	a_button = new JoystickButton(j1, 2);
-    	b_button = new JoystickButton(j1, 3);
-    	y_button = new JoystickButton(j1, 4);
-    	lb_button = new JoystickButton(j1, 5);
-    	rb_button = new JoystickButton(j1, 6);
-    	lt_button = new JoystickButton(j1, 7);
-    	rt_button = new JoystickButton(j1, 8);
+    	x_button = new JoystickButton(j1, 1); //?
+    	a_button = new JoystickButton(j1, 2); //Arm Down
+    	b_button = new JoystickButton(j1, 3); //180
+    	y_button = new JoystickButton(j1, 4); //Arm Up
+    	lb_button = new JoystickButton(j1, 5); // pull in
+    	rb_button = new JoystickButton(j1, 6); // push out
+    	lt_button = new JoystickButton(j1, 7); // hold for low
+    	rt_button = new JoystickButton(j1, 8); // hold for 50%
     	
     	a_button.whenPressed(new HighGear());
     	b_button.whenPressed(new LowGear());
