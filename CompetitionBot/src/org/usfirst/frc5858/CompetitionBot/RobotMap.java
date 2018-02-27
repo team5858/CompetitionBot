@@ -10,6 +10,7 @@ import com.ctre.phoenix.sensors.PigeonIMU;
 
 import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.AnalogPotentiometer;
+import edu.wpi.first.wpilibj.Compressor;
 import edu.wpi.first.wpilibj.DoubleSolenoid;
 import edu.wpi.first.wpilibj.SpeedController;
 import edu.wpi.first.wpilibj.Ultrasonic;
@@ -42,6 +43,8 @@ public class RobotMap {
     public static VictorSPX power_Cube_CannonRight_Manipulator_2;
     public static TalonSRX power_Cube_Shoulder;
     public static VictorSPX power_Cube_CannonRight_Shoulder;
+    
+    public static Compressor compressor;
 /*
     public static SpeedController pull_up_HookSpool;
     public static SpeedController pull_up_HookSecond_Stage_Left;
@@ -68,7 +71,8 @@ public class RobotMap {
     private static final int powerCubeCannonRight2_CID   = 12; //11;
     
     private static final int actuator1_CID = 8;
-    private static final int pigeon_IMU_CID = 13;
+    private static final int pcm_CID = 13;
+    private static final int pigeon_IMU_CID = 14;
     public static DoubleSolenoid leftGearBox;
     public static DoubleSolenoid rightGearBox;
     
@@ -81,6 +85,8 @@ public class RobotMap {
     // ANALOG IDs
     private static final int ultrasonic_AID = 0;
     private static final int potentiometer_AID = 1;
+    
+    
     
     public static void init() {
                         
@@ -159,6 +165,7 @@ public class RobotMap {
         
         //power_Cube_Shoulder = new TalonSRX(powerCubeCannonShoulder_ID);
         power_Cube_Shoulder = new TalonSRX(actuator1_CID);
+        power_Cube_Shoulder.configSelectedFeedbackSensor(FeedbackDevice.QuadEncoder, 0, 0);
         power_Cube_Shoulder.setInverted(false);
         power_Cube_Shoulder.setNeutralMode(NeutralMode.Brake);
         
@@ -188,7 +195,10 @@ public class RobotMap {
         
 		AnalogInput.setGlobalSampleRate(10000);
 		
-		leftGearBox = new DoubleSolenoid(1,2);
-		rightGearBox = new DoubleSolenoid(3,4);
+		leftGearBox = new DoubleSolenoid(pcm_CID,0,1);
+		rightGearBox = new DoubleSolenoid(pcm_CID,2,3);
+		
+		compressor = new Compressor(pcm_CID);
+		compressor.setClosedLoopControl(true);
     }
 }

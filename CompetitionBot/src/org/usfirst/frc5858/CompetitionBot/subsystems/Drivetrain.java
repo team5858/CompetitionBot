@@ -54,7 +54,11 @@ public class Drivetrain extends Subsystem {
     @Override
     public void periodic()
     {
-    	
+    	SmartDashboard.putNumber("Encoder Velocity 2", RobotMap.drivetrainLeft_Speed_Controller1.getSelectedSensorVelocity(0));
+    	SmartDashboard.putNumber("Encoder Position 2", RobotMap.drivetrainLeft_Speed_Controller1.getSelectedSensorPosition(0));
+
+    	SmartDashboard.putNumber("Encoder Velocity 5", RobotMap.drivetrainLeft_Speed_Controller2.getSelectedSensorVelocity(0));
+    	SmartDashboard.putNumber("Encoder Position 5", RobotMap.drivetrainLeft_Speed_Controller2.getSelectedSensorPosition(0));
     }
 
     /*
