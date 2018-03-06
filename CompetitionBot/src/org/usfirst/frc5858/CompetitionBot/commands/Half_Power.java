@@ -1,17 +1,15 @@
 package org.usfirst.frc5858.CompetitionBot.commands;
 
-import org.usfirst.frc5858.CompetitionBot.Robot;
-
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
  *
  */
-public class HighGear extends Command {
+public class Half_Power extends Command {
 
-    public HighGear() {
+    public Half_Power() {
         // Use requires() here to declare subsystem dependencies
-    	requires(Robot.drivetrain);
+        // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
@@ -20,7 +18,6 @@ public class HighGear extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	Robot.drivetrain.highGear();
     }
 
     // Make this return true when this Command no longer needs to run execute()

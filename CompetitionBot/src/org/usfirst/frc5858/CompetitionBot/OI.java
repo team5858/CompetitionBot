@@ -37,20 +37,25 @@ public class OI {
     	lt_button = new JoystickButton(j1, 7); // hold for low
     	rt_button = new JoystickButton(j1, 8); // hold for 50%
     	
-    	a_button.whenPressed(new HighGear());
-    	b_button.whenPressed(new LowGear());
+    	a_button.whenPressed(new Arm_Down());
+    	a_button.whenPressed(new Arm_Stop());
     	
-    	lb_button.whenPressed(new Pull_In());
-    	lb_button.whenReleased(new Push_Pull_Stop());
-    	
-    	rb_button.whenPressed(new Push_Out());
-    	rb_button.whenReleased(new Push_Pull_Stop());
-    	
-    	lt_button.whenPressed(new Arm_Up());
-        lt_button.whenReleased(new Arm_Stop());
+        y_button.whenPressed(new Arm_Up());
+        y_button.whenReleased(new Arm_Stop());
         
-    	rt_button.whenPressed(new Arm_Down());
-    	rt_button.whenReleased(new Arm_Stop());
+        lb_button.whenPressed(new Pull_In());
+        lb_button.whenReleased(new Push_Pull_Stop());
+        
+        rb_button.whenPressed(new Push_Out());
+        rb_button.whenReleased(new Push_Pull_Stop());
+        
+    	lt_button.whenPressed(new Low_Gear());
+    	lt_button.whenReleased(new High_Gear());
+    	
+    	rt_button.whenPressed(new Half_Power());
+    	rt_button.whenReleased(new Full_Power());
+    	
+    	b_button.whenPressed(new Turn_Around());
     	
         // SmartDashboard Buttons
         SmartDashboard.putData("Autonomous Command", new AutonomousCommand());
