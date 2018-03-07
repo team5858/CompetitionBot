@@ -84,11 +84,11 @@ public class Power_Cube_Cannon extends Subsystem {
     	right_Manipulator_2.set(ControlMode.PercentOutput, 0.0);
     }
     public void armUp() {
-    	shoulder.set(ControlMode.PercentOutput, -0.4);
+    	shoulder.set(ControlMode.PercentOutput, -0.75);
     }
     
     public void armDown() {
-    	shoulder.set(ControlMode.PercentOutput, 0.4);
+    	shoulder.set(ControlMode.PercentOutput, 0.25);
     }
     
     public void armStop() {
