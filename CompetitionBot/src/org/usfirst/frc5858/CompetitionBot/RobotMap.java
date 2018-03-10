@@ -1,6 +1,8 @@
 
 package org.usfirst.frc5858.CompetitionBot;
 
+import org.usfirst.frc5858.CompetitionBot.subsystems.LEDDriver;
+
 import com.ctre.phoenix.motorcontrol.FeedbackDevice;
 import com.ctre.phoenix.motorcontrol.NeutralMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
@@ -43,6 +45,7 @@ public class RobotMap {
     public static VictorSPX power_Cube_CannonRight_Manipulator_2;
     public static TalonSRX power_Cube_Shoulder;
     public static VictorSPX power_Cube_CannonRight_Shoulder;
+    public static LEDDriver ledDriver;
     
     public static Compressor compressor;
 /*

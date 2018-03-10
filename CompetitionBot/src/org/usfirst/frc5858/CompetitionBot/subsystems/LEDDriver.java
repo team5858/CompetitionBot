@@ -21,15 +21,17 @@ public class LEDDriver extends Subsystem {
 		//		
 		PullIn,
 		PushOut,
+		PushPullStop,
 		ArmUp,
-		ArmUpDone,
+		ArmDown,
+		ArmStop,
 		//
 		LowGear,
 		HighGear,
-		HalfPower,
-		FullPower,
-		TurnAround,
-		TurnAroundDone
+		//HalfPower,
+		//FullPower,
+		//TurnAround,
+		//TurnAroundDone
 		
 	}
 	
@@ -49,7 +51,7 @@ public class LEDDriver extends Subsystem {
 	 * Send the desired LED command to the Oreo Board
 	 * @param command what the LEDs do
 	 */
-	public void sendCommand(Commands command) {
+	public void sendCommand2(Commands command) {
 		// The OREO board uses carriage returns to separate commands
 		port.writeString(command.toString()+"\r");
 	}			
@@ -58,14 +60,14 @@ public class LEDDriver extends Subsystem {
 	 * Shortcut for the "Test" command
 	 */
 	public void test() {
-		sendCommand(Commands.Test);
+		///sendCommand(Commands.Test);
 	}	
 	
 	/**
 	 * Shortcut for the "OFF" command
 	 */
 	public void allOff() {
-		sendCommand(Commands.OFF);
+		//sendCommand(Commands.OFF);
 	}
 
 }

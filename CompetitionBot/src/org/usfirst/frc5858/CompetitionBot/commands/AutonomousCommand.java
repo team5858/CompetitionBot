@@ -38,7 +38,6 @@ public class AutonomousCommand extends Command {
     @Override
     protected void initialize() {
     	Robot.drivetrain.runTalonPosition(1);
-    	System.out.println("HERE");
     }
 
     // Called repeatedly when this Command is scheduled to run

@@ -46,6 +46,8 @@ public class Drivetrain extends Subsystem {
     public final DoubleSolenoid leftGearBox = RobotMap.leftGearBox;
     public final DoubleSolenoid rightGearBox = RobotMap.rightGearBox;
     
+    public final LEDDriver ledDriver = RobotMap.ledDriver;
+    
     @Override
     public void initDefaultCommand() {
     	setDefaultCommand(new JoystickDrive());
@@ -128,11 +130,13 @@ public class Drivetrain extends Subsystem {
     public void lowGear() {
     	leftGearBox.set(DoubleSolenoid.Value.kReverse);
     	rightGearBox.set(DoubleSolenoid.Value.kReverse);
+    	//ledDriver.sendCommand(LEDDriver.Commands.LowGear);
     }
     
     public void highGear() {
     	leftGearBox.set(DoubleSolenoid.Value.kForward);
     	rightGearBox.set(DoubleSolenoid.Value.kForward);
+    	//ledDriver.sendCommand(LEDDriver.Commands.HighGear);
     }
     
 }

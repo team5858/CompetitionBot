@@ -1,5 +1,8 @@
 package org.usfirst.frc5858.CompetitionBot.commands;
 
+import org.usfirst.frc5858.CompetitionBot.Robot;
+import org.usfirst.frc5858.CompetitionBot.RobotMap;
+
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
@@ -8,12 +11,14 @@ import edu.wpi.first.wpilibj.command.Command;
 public class Full_Power extends Command {
 
     public Full_Power() {
+    	//requires(Robot.drivetrain);
         // Use requires() here to declare subsystem dependencies
         // eg. requires(chassis);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+    	//RobotMap.drivetrainRobot_Drive_rd.setMaxOutput(1.0);
     }
 
     // Called repeatedly when this Command is scheduled to run

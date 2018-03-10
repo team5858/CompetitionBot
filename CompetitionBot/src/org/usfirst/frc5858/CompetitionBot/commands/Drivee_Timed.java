@@ -18,13 +18,13 @@ public class Drivee_Timed extends TimedCommand {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.drivetrain.robot_Drive_rd.arcadeDrive(.5, 0);
+    	//Robot.drivetrain.robot_Drive_rd.arcadeDrive(.5, 0);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-    	double yaw = Robot.drivetrain.getGyroscope();
-    	Robot.drivetrain.robot_Drive_rd.arcadeDrive(.5, -yaw * 0.03);
+    	//double yaw = Robot.drivetrain.getGyroscope();
+    	Robot.drivetrain.robot_Drive_rd.arcadeDrive(-.5, 0);
     }
 
     // Called once after timeout

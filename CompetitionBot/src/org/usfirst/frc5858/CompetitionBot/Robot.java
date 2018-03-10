@@ -51,7 +51,7 @@ public class Robot extends TimedRobot {
 	    autonomousCommands[2]  = "driveStraight";
 	    SmartDashboard.putStringArray("Auto List", autonomousCommands);
    	 
-        chooser.addDefault("Autonomous Command", new AutonomousCommand());
+        chooser.addDefault("Autonomous Command",  new Drivee_Timed(3) );
 
         SmartDashboard.putData("Auto mode", chooser);
     }
@@ -72,9 +72,12 @@ public class Robot extends TimedRobot {
 
     @Override
     public void autonomousInit() {
-        autonomousCommand = chooser.getSelected();
+       // autonomousCommand = chooser.getSelected();
+    	autonomousCommand = new Drivee_Timed(3);   	
+    	
         // schedule the autonomous command (example)
         if (autonomousCommand != null) autonomousCommand.start();
+        //RobotMap.ledDriver.sendCommand(LEDDriver.Commands.ModeTeleop);
        // String autoModeSelected = SmartDashboard.getString("Auto Selector","");
     }
 
@@ -93,6 +96,11 @@ public class Robot extends TimedRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         if (autonomousCommand != null) autonomousCommand.cancel();
+        
+        // TODO pick one
+        //RobotMap.ledDriver.sendCommand(LEDDriver.Commands.ModeAutonomousRed);
+    	//RobotMap.ledDriver.sendCommand(LEDDriver.Commands.ModeAutonomousBlue);
+    	
     }
 
     /**
